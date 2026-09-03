@@ -1,0 +1,429 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+
+/* ==============================
+   RESET
+================================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+*:focus,
+*:active {
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+
+/* ==============================
+   BODY
+================================= */
+
+html,
+body {
+  width: 100%;
+  min-height: 100%;
+}
+
+
+body {
+  font-family: "Poppins", sans-serif;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  min-height: 100vh;
+
+  padding: 30px;
+
+  background:
+    radial-gradient(
+      circle at top left,
+      rgba(67, 229, 160, 0.35),
+      transparent 40%
+    ),
+    radial-gradient(
+      circle at bottom right,
+      rgba(67, 229, 160, 0.25),
+      transparent 40%
+    ),
+    #b8fadd;
+
+  color: #222;
+}
+
+
+/* ==============================
+   CONTENEDOR PRINCIPAL
+================================= */
+
+.contact-container {
+  width: 100%;
+  max-width: 500px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+/* ==============================
+   TARJETA
+================================= */
+
+.contact-card {
+  width: 100%;
+
+  padding: 45px 35px;
+
+  background: rgba(255, 255, 255, 0.92);
+
+  border-radius: 25px;
+
+  text-align: center;
+
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.12);
+
+  backdrop-filter: blur(10px);
+
+  border: 1px solid rgba(255, 255, 255, 0.7);
+}
+
+
+/* ==============================
+   ICONO PERFIL
+================================= */
+
+.profile-icon {
+  width: 75px;
+  height: 75px;
+
+  margin: 0 auto 20px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 50%;
+
+  background: #43e5a0;
+
+  color: white;
+
+  font-size: 28px;
+
+  box-shadow:
+    0 10px 25px rgba(67, 229, 160, 0.35);
+}
+
+
+/* ==============================
+   CABECERA
+================================= */
+
+.contact-header h1 {
+  font-size: 32px;
+
+  font-weight: 700;
+
+  margin-bottom: 10px;
+
+  color: #222;
+}
+
+
+.contact-header p {
+  max-width: 380px;
+
+  margin: 0 auto;
+
+  font-size: 14px;
+
+  line-height: 1.7;
+
+  color: #777;
+}
+
+
+/* ==============================
+   REDES SOCIALES
+================================= */
+
+.social-container {
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  gap: 18px;
+
+  margin-top: 35px;
+}
+
+
+/* ==============================
+   ICONO SOCIAL
+================================= */
+
+.social {
+  position: relative;
+
+  width: 60px;
+  height: 60px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 50%;
+
+  background: #43e5a0;
+
+  color: #ffffff;
+
+  text-decoration: none;
+
+  font-size: 22px;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 10px 20px rgba(0, 0, 0, 0.12);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    background 0.3s ease;
+}
+
+
+/* ==============================
+   ENLACE OCUPA TODO EL CIRCULO
+================================= */
+
+.social {
+  overflow: visible;
+}
+
+
+/* ==============================
+   HOVER ICONOS
+================================= */
+
+.social:hover {
+  transform: translateY(-7px);
+
+  box-shadow:
+    0 15px 30px rgba(0, 0, 0, 0.18);
+}
+
+
+/* ==============================
+   TWITTER
+================================= */
+
+.twitter:hover {
+  background: #1DA1F2;
+}
+
+
+/* ==============================
+   INSTAGRAM
+================================= */
+
+.instagram:hover {
+  background: #E4405F;
+}
+
+
+/* ==============================
+   GITHUB
+================================= */
+
+.github:hover {
+  background: #333333;
+}
+
+
+/* ==============================
+   TOOLTIP
+================================= */
+
+.tooltip {
+  position: absolute;
+
+  top: -45px;
+  left: 50%;
+
+  transform: translateX(-50%) translateY(10px);
+
+  padding: 6px 10px;
+
+  border-radius: 6px;
+
+  font-size: 13px;
+
+  font-weight: 500;
+
+  color: white;
+
+  background: #222;
+
+  white-space: nowrap;
+
+  opacity: 0;
+
+  visibility: hidden;
+
+  pointer-events: none;
+
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease;
+}
+
+
+/* ==============================
+   FLECHA TOOLTIP
+================================= */
+
+.tooltip::after {
+  content: "";
+
+  position: absolute;
+
+  left: 50%;
+
+  bottom: -5px;
+
+  width: 10px;
+  height: 10px;
+
+  background: #222;
+
+  transform: translateX(-50%) rotate(45deg);
+}
+
+
+/* ==============================
+   MOSTRAR TOOLTIP
+================================= */
+
+.social:hover .tooltip {
+  opacity: 1;
+
+  visibility: visible;
+
+  transform: translateX(-50%) translateY(0);
+}
+
+
+/* ==============================
+   COLORES TOOLTIP
+================================= */
+
+.twitter:hover .tooltip,
+.twitter:hover .tooltip::after {
+  background: #1DA1F2;
+}
+
+
+.instagram:hover .tooltip,
+.instagram:hover .tooltip::after {
+  background: #E4405F;
+}
+
+
+.github:hover .tooltip,
+.github:hover .tooltip::after {
+  background: #333333;
+}
+
+
+/* ==============================
+   MENSAJE INFERIOR
+================================= */
+
+.contact-message {
+  margin-top: 35px;
+
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  gap: 10px;
+
+  font-size: 12px;
+
+  color: #888;
+}
+
+
+.contact-message i {
+  color: #43e5a0;
+
+  font-size: 15px;
+}
+
+
+/* ==============================
+   FOOTER
+================================= */
+
+footer {
+  margin-top: 20px;
+
+  text-align: center;
+
+  font-size: 11px;
+
+  color: rgba(0, 0, 0, 0.45);
+}
+
+
+/* ==============================
+   RESPONSIVE MOVIL
+================================= */
+
+@media (max-width: 500px) {
+
+  body {
+    padding: 20px;
+  }
+
+
+  .contact-card {
+    padding: 35px 20px;
+  }
+
+
+  .contact-header h1 {
+    font-size: 27px;
+  }
+
+
+  .contact-header p {
+    font-size: 13px;
+  }
+
+
+  .social-container {
+    gap: 14px;
+  }
+
+
+  .social {
+    width: 55px;
+    height: 55px;
+
+    font-size: 20px;
+  }
+
+}
